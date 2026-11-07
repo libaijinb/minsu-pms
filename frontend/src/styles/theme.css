@@ -1,0 +1,73 @@
+/*
+ * PMS 设计系统：
+ * - C 端用民宿感的暖珊瑚品牌色（区别于 Element Plus 默认蓝，避免"传统后台脸"）
+ * - B 端沿用 Element Plus 中性灰，靠布局与密度体现工具感
+ * - 通过 CSS 变量统一管控，覆盖 Element Plus 主题
+ */
+
+:root {
+  /* 品牌色：暖珊瑚 */
+  --brand: #f6544a;
+  --brand-dark: #d94337;
+  --brand-light: #fff0ef;
+  --ink: #1f2937;        /* 主文字 */
+  --ink-2: #6b7280;      /* 次文字 */
+  --line: #e5e7eb;       /* 分隔线 */
+  --bg: #fafafa;         /* 页面底 */
+  --card: #ffffff;
+  --radius: 16px;        /* C 端大圆角 */
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.14);
+
+  /* 覆盖 Element Plus 主色，让按钮/链接/选中态都是品牌色 */
+  --ep-color-primary: var(--brand);
+  --el-color-primary: var(--brand);
+  --el-color-primary-light-3: #f87b73;
+  --el-color-primary-light-8: #fdc4c0;
+  --el-color-primary-light-9: var(--brand-light);
+  --el-color-primary-dark-2: var(--brand-dark);
+  --el-border-radius-base: 10px;
+}
+
+/* 只重置盒模型与 body 边距——不能用 * { margin: 0; padding: 0 }，
+ * 那会把 Element Plus 组件的内建间距（表单项 margin、弹窗 padding 等）全部清零 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+/* C 端通用：大图卡片 hover 微动效 */
+.lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* 页面容器 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 16px;
+  }
+}

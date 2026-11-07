@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#84fab0"/><stop offset="1" stop-color="#8fd3f4"/>
+</linearGradient></defs>
+<rect width="800" height="600" fill="url(#g)"/>
+<circle cx="650" cy="130" r="70" fill="rgba(255,255,255,.18)"/>
+<circle cx="120" cy="500" r="100" fill="rgba(255,255,255,.12)"/>
+<text x="400" y="300" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="46" fill="#fff" text-anchor="middle" font-weight="bold">杭州西湖文艺一居室</text>
+<text x="400" y="360" font-family="PingFang SC, Microsoft YaHei, sans-serif" font-size="24" fill="rgba(255,255,255,.85)" text-anchor="middle">西湖 · 步行 8 分钟</text>
+</svg>
